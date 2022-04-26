@@ -9,8 +9,8 @@ const arweave = Arweave.init({
 })
 
 const smartweave = SmartWeaveNodeFactory.memCachedBased(arweave)
-  .useRedStoneGateway()
-  .build({ notCorrupted: true })
+  .useRedStoneGateway({ notCorrupted: true })
+  .build()
 
 const wallet = JSON.parse(fs.readFileSync('./mywallet.json', 'utf-8'))
 const src = fs.readFileSync('./contract.js', 'utf-8')
